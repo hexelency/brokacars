@@ -7,6 +7,6 @@ export const config = {
   matcher: [
     '/dashboard(.*)', // protect dashboard area
     '/history(.*)',   // other protected routes
-    '/api/(.*)',      // protect API routes
+    // '/api/(.*)',      // protect API routes 
   ],
 };

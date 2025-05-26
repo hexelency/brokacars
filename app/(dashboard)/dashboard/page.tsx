@@ -15,13 +15,13 @@ export default function Dashboard() {
     //   []
     // );
   
-    const getUserLocation = ()=> {
-      navigator.geolocation.getCurrentPosition(
-        (pos) =>{
-          console.log(pos);
-        }
-      )
-    };
+    // const getUserLocation = ()=> {
+    //   navigator.geolocation.getCurrentPosition(
+    //     (pos) =>{
+    //       console.log(pos);
+    //     }
+    //   )
+    // };
 
 //   const getPreciseUserLocation = () => {
 //   if (!navigator.geolocation) {
