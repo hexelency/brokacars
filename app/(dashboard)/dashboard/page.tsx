@@ -1,7 +1,7 @@
 "use client";
 
-import { UserButton } from "@clerk/nextjs";
-import Image from "next/image";
+// import { UserButton } from "@clerk/nextjs";
+// import Image from "next/image";
 import Booking from "../_components/booking/Booking";
 import MapSection from "../_components/map/MapSection";
 import {  useEffect, useState } from "react";

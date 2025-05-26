@@ -1,6 +1,6 @@
-import NavBar from "@/app/(landingpage)/_components/NavBar";
-import LogoAnimated from "@/components/general/LogoAnimated";
-import LogoText from "@/components/general/LogoText";
+// import NavBar from "@/app/(landingpage)/_components/NavBar";
+// import LogoAnimated from "@/components/general/LogoAnimated";
+// import LogoText from "@/components/general/LogoText";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import DasboardNavBar from "./_components/DasboardNavBar";

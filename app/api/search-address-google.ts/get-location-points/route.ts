@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const GOOGLE_PLACES_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json";
+// const GOOGLE_PLACES_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json";
 const GOOGLE_DETAILS_URL = "https://maps.googleapis.com/maps/api/place/details/json";
 const GOOGLE_API_KEY = process.env.GOOGLE_MAPS_API_KEY!;
 
