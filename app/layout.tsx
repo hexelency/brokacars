@@ -9,17 +9,17 @@ import {
 } from '@clerk/nextjs'
 import { Geist, Geist_Mono, Outfit } from 'next/font/google'
 import './globals.css'
-import NavBar from '@/app/(landingpage)/_components/NavBar'
+// import NavBar from '@/app/(landingpage)/_components/NavBar'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
+// const geistSans = Geist({
+//   variable: '--font-geist-sans',
+//   subsets: ['latin'],
+// })
 
-const outfit = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+// const outfit = Geist_Mono({
+//   variable: '--font-geist-mono',
+//   subsets: ['latin'],
+// })
 
 export const metadata: Metadata = {
   title: "brokacars",
