@@ -4,16 +4,16 @@
 // import Image from "next/image";
 import Booking from "../_components/booking/Booking";
 import MapSection from "../_components/map/MapSection";
-import {  useEffect, useState } from "react";
+// import {  useEffect, useState } from "react";
 
 export default function Dashboard() {
-  const [userLocation , setUserLocation] = useState<any>() ;
-    useEffect(
-      () => {
-        getUserLocation();
-      },
-      []
-    );
+  // const [userLocation , setUserLocation] = useState<any>() ;
+    // useEffect(
+    //   () => {
+    //     getUserLocation();
+    //   },
+    //   []
+    // );
   
     const getUserLocation = ()=> {
       navigator.geolocation.getCurrentPosition(

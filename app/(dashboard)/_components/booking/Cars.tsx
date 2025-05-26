@@ -37,7 +37,7 @@ const CarsList = [
 ]
 
 const Cars = () => {
-  const [selectedCar , setSelectedCar] = useState<any>();
+  const [selectedCar , setSelectedCar] = useState<number>();
   return (
     <div className='mt-1 md:mt-3'>
       <h2 className='font-semibold text-[16px]'>
@@ -55,7 +55,7 @@ const Cars = () => {
             
 
             <Image
-            src={car.image!}
+            src={car!.image!}
             height={50}
             width={100}
             alt={"car"+car.name}

@@ -5,8 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface Suggestion {
-    [x: string]: any;
+    // [x: string]: any;
     full_address: string;
+    place_id: string;
 }
 
 interface AddressInputProps {
