@@ -20,8 +20,8 @@ export default async function RootLayout({
     // <ClerkProvider>
     
         <>
-        <div className="container mx-auto my-auto">
-        <header className="flex justify-between items-center px-[5px] md:p-4 gap-4 h-16
+        <div className=" container mx-auto my-auto">
+        <header className="h-[10vh] flex justify-between items-center px-[5px] md:p-4 gap-4
            border-b-[1px] shadow-sm">
           <>
             <DasboardNavBar />

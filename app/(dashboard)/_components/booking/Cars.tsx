@@ -56,10 +56,10 @@ const Cars = () => {
 
             <Image
             src={car!.image!}
-            height={50}
+            height={100}
             width={100}
             alt={"car"+car.name}
-            className='w-full md:w-[80%] self-center '
+            className=' md:w-[80%] md:h-full lg:h-full self-center w-[50%] h-[80%]'
             />
             <div className='flex justify-around w-full text-slate-950'>
               <h2 className=" text-[12px] text-gray-400">{car.name}</h2>

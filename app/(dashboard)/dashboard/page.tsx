@@ -71,13 +71,13 @@ export default function Dashboard() {
 
   return (
     <>
-    <div className="container p-[5px] md:p-4 overflow-hidden overflow-y-clip mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 ">
-        <div className="bg-slate-950/5 p-2">
+    <div className="  container grid grid-cols-1 md:max-h-[90vh] h-[89.9vh] p-[5px] md:p-4 overflow-hidden mx-auto">
+      <div className=" grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 ">
+        <div className=" bg-slate-950/5 p-[10px] md:p-2 md:h-[87vh] h-[54vh] md:col-span-2 lg:col-span-1">
           <Booking />
         </div>
         {/* map section  */}
-        <div className="col-span-2 bg-blue-950/10 order-first md:order-last h-[30vh] md:h-full ">
+        <div className=" md:col-span-2 lg:col-span-2 bg-blue-950/10 order-first md:order-last h-[35vh] md:h-full ">
          <MapSection />
         </div>
       </div>

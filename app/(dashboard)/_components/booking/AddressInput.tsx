@@ -65,7 +65,7 @@ export const AddressInput: React.FC<AddressInputProps> = ({
     };
 
     return (
-        <div className="mt-0 md:mt-4">
+        <div className="mt-0 sm:mt-4">
             <label className="text-sm text-muted-foreground">{label}</label>
             <Input
                 type="text"
@@ -77,7 +77,7 @@ export const AddressInput: React.FC<AddressInputProps> = ({
                 }}
             />
             <div className="relative">
-                {loading && value.trim() && <Skeleton className="mt-0 md:mt-2 h-2 md:h-4 w-24 rounded bg-gray-200" />}
+                {loading && value.trim() && <Skeleton className="mt-0 md:mt-2 h-2 sm:h-4 w-24 rounded bg-gray-200" />}
 
                 {!loading && suggestions.length > 0 && (
                     <div className="mt-0 md:mt-2 bg-transparent border rounded shadow-sm">
