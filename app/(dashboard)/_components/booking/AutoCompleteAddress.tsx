@@ -26,7 +26,7 @@ const AutoCompleteAddress = () => {
   const [manualDestinationSelected, setManualDestinationSelected] = useState<boolean>(false);
 
   return (
-    <div className="">
+    <div className=" border-[2px] -5 sm:pl-2 border-slate-950/10 rounded-lg mb-8 md:mb-5 sm:mb-2 md:min-w-[vw] 2xl:mb-1">
       <AddressInput
         label="Where From?"
         value={source}

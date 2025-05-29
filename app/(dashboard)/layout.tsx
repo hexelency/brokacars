@@ -21,7 +21,7 @@ export default async function RootLayout({
     
         <>
         <div className=" container mx-auto my-auto">
-        <header className="h-[10vh] flex justify-between items-center px-[5px] md:p-4 gap-4
+        <header className="h-[8vh] md:h-[10vh] sm:h-[8vh] flex justify-between items-center px-[5px] md:p-4 gap-4
            border-b-[1px] shadow-sm">
           <>
             <DasboardNavBar />
