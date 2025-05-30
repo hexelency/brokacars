@@ -1,10 +1,41 @@
 "use client";
 
+import { Metadata } from "next";
 // import { UserButton } from "@clerk/nextjs";
 // import Image from "next/image";
 import Booking from "../_components/booking/Booking";
 import MapSection from "../_components/map/MapSection";
 // import {  useEffect, useState } from "react";
+
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Brokacars Dashboard",
+    description: "Best Prices and Comfortable rides with Brokacars. dashboard",
+    openGraph: {
+      title: "Brokacars Dashboard",
+      description: "Best Prices and Comfortable rides with Brokacars.",
+      url: "https://brokacars.vercel.app/dashboard",
+      siteName: "Brokacars",
+      images: [
+        {
+          url: "https://brokacars.vercel.app/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Brokacars dashboard preview",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Brokacars Dashboard",
+      description: "Comfortable rides with Brokacars.",
+      images: ["https://brokacars.vercel.app/og-image.png"],
+    },
+  }
+}
 
 
 export default function Dashboard() {
