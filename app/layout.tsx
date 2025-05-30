@@ -22,16 +22,16 @@ import './globals.css'
 // })
 
 export const metadata = {
-  title: "Brokacars Dashboard",
+  title: "Brokacars services",
   description: "Best Prices and Comfortable rides with Brokacars. layout",
   openGraph: {
-    title: "Brokacars Dashboard",
+    title: "Brokacars srvices",
     description: "Best Prices and Comfortable rides with Brokacars.",
-    url: "https://brokacars.vercel.app/dashboard",
+    url: "https://brokacars.vercel.app/services",
     siteName: "Brokacars",
     images: [
       {
-        url: "https://brokacars.vercel.app/og-image.png",
+        url: "https://brokacars.vercel.app/og-image1.jpg",
         width: 1200,
         height: 630,
         alt: "Brokacars dashboard preview",
@@ -44,7 +44,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Brokacars Dashboard",
     description: "Comfortable rides with Brokacars.",
-    images: ["https://brokacars.vercel.app/og-image.png"],
+    images: ["https://brokacars.vercel.app/og-image1.jpg"],
   },
 };
 
