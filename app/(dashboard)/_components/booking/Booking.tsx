@@ -8,7 +8,7 @@ const Booking = () => {
   return (
     <div className=' p-0 mt-0 grid grid-rows-[1fr_14fr] '>
 
-      <span className='text-[10px] md:text-[1.29rem] font-semibold text-center p-1 block mt-1'>Book a ride
+      <span className='text-[12px] md:text-[1.29rem] font-semibold text-center p-1 block mt-1'>Book a ride
       </span>
 
       <div className='overflow-hidden h-[55vh] sm:h-fit md:h-full  w-full sm:w-full sm:min-w-0 sm:min-h-0 md:w-full lg:min-h-[81.9vh] justify-around  md:grid  grid-rows-[auto_auto_auto]' >

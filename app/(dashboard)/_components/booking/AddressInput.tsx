@@ -66,10 +66,10 @@ export const AddressInput: React.FC<AddressInputProps> = ({
 
     return (
         <div className="mt-0 sm:mt-4 w-full px-2 pb-1 sm:pb-1 sm:pr-2">
-            <label className="text-[10px] text-slate-800">{label}</label>
+            <label className="text-[12px] text-slate-800">{label}</label>
             <Input
                 type="text"
-                className="mt-0 md:mt-1 border-2 border-slate-900/90"
+                className="mt-0 md:mt-1 text-[11px] border-2 border-slate-900/90"
                 value={value}
                 onChange={(e) => {
                     setManualSelected(false);
@@ -77,10 +77,10 @@ export const AddressInput: React.FC<AddressInputProps> = ({
                 }}
             />
             <div className="relative">
-                {loading && value.trim() && <Skeleton className="mt-0 md:mt-2 h-2 sm:h-4 w-24 rounded bg-gray-200" />}
+                {loading && value.trim() && <Skeleton className="mt-[2px] md:mt-2 h-[14px] sm:h-4 w-[55%] rounded bg-gray-200" />}
 
                 {!loading && suggestions.length > 0 && (
-                    <div className="mt-0 md:mt-2 bg-transparent border rounded shadow-sm">
+                    <div className="mt-0 md:mt-2 text-[12px] sm:text-[18px] bg-transparent border rounded shadow-sm">
                         {suggestions
                             .filter(item => item.full_address && item.full_address.trim() !== "")
                             .map((item, index) => (

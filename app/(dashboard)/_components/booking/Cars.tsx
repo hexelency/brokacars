@@ -40,7 +40,7 @@ const Cars = () => {
   const [selectedCar , setSelectedCar] = useState<number>();
   return (
     <div className='mt-1 md:mt-3 mb-8 sm:mb-0 md:min-w-[380px] lg:min-w-[330px] xl:min-w-[415px] 2xl:min-w-[500px] 2xl:mb-0 '>
-      <h2 className='font-semibold text-center text-[10px] sm:text-[12px] sm:mt-0'>
+      <h2 className='font-semibold text-center text-[12px] sm:text-[12px] sm:mt-0'>
         Select  Car
       </h2>
       
@@ -62,7 +62,7 @@ const Cars = () => {
             className=' md:w-[100df]  md:h-full self-center w-[40] h-[29.9] sm:w-[45] sm:h-[30]'
             />
             <div className='flex justify-around w-full text-slate-950'>
-              <h2 className=" text-nowrap text-[10px] text-slate-600">{car.name}</h2>
+              <h2 className=" text-nowrap text-[11px] text-slate-600">{car.name}</h2>
             <span className='text-[12px] rounded-3xl bg-slate-200' >&#x20A6;{car.charges * 10}</span>
             </div>
             

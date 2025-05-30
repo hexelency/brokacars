@@ -18,7 +18,7 @@ export async function GET(request: Request) {
     q: searchText,
     language: "en",
     limit: "8",
-    session_token,
+    // session_token,
     access_token: MAPBOX_ACCESS_TOKEN,
   });
 

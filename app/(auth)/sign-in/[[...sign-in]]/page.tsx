@@ -5,6 +5,7 @@ export default function Page() {
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <SignIn
       afterSignInUrl="/dashboard"
+      afterSignUpUrl="/dashboard"
         appearance={{
           elements: {
             card: "bg-white shadow-md p-6 rounded-lg",
