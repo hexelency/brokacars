@@ -3,32 +3,7 @@ import AutoCompleteAddress from './AutoCompleteAddress'
 import Cars from './Cars'
 import Paymentcard from './payment-card'
 
-export const metadata = {
-  title: "Brokacars Dashboard",
-  description: "Comfortable drives with Brokacars.",
-  openGraph: {
-    title: "Brokacars Dashboard",
-    description: "Best Prices and Comfortable rides with Brokacars.",
-    url: "https://brokacars.vercel.app/dashboard",
-    siteName: "Brokacars",
-    images: [
-      {
-        url: "https://brokacars.vercel.app/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Brokacars dashboard preview",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Brokacars Dashboard",
-    description: "Comfortable rides with Brokacars.",
-    images: ["https://brokacars.vercel.app/og-image.png"],
-  },
-};
+
 
 
 const Booking = () => {
