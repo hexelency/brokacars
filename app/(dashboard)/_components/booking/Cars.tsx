@@ -47,7 +47,7 @@ const Cars = () => {
       <div className="grid grid-cols-3 gap-1 md:gap-2 md:grid-cols-3 w-full border-0 mb-8 sm:mb-0">
       {
         CarsList.map((car, index) =>(
-          <div  key={index} className={`flex flex-col border-[1px] text-center items-center justify-center  gap-[0.8rem] sm:gap-[1.4rem] mb-[14px] sm:mb-[0px] rounded-md cursor-pointer hover:border-blue-950 ${selectedCar == index ? " border-blue-950 border-[2px]" : null} `}
+          <div  key={index} className={`flex flex-col border-[1px] text-center items-center justify-center  gap-[0.8rem] sm:gap-[1.4rem] mb-[14px] sm:mb-[0px] rounded-md shadow-3xs shadow-slate-600 cursor-pointer hover:border-blue-950 ${selectedCar == index ? " border-blue-950 border-[0px] shadow-sm" : null} `}
           onClick={() => {
             setSelectedCar(index);
           }}

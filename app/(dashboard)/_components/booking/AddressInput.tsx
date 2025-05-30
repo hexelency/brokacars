@@ -69,7 +69,7 @@ export const AddressInput: React.FC<AddressInputProps> = ({
             <label className="text-[12px] text-slate-800">{label}</label>
             <Input
                 type="text"
-                className="mt-0 md:mt-1 text-[11px] border-2 border-slate-900/90"
+                className="mt-0 md:mt-1 text-[11px] border-1 border-slate-900/90"
                 value={value}
                 onChange={(e) => {
                     setManualSelected(false);
