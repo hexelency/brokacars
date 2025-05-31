@@ -9,7 +9,7 @@ import Paymentcard from './payment-card'
 const Booking = () => {
   // const screenHeight = window.innerHeight;
   return (
-    <div className=' p-0 mt-0 grid grid-rows-[auto_14fr] sm:grid-rows-[]'>
+    <div className=' p-0 mt-0 grid grid-rows-[auto_14fr] sm:grid-rows-[] scroll-on-landscape'>
 
       <span className='text-[12px]  md:text-[1.29rem] font-semibold text-center p-1 block mt-1'>Book a ride
       </span>
