@@ -25,7 +25,7 @@ export const metadata = {
   title: "Brokacars services",
   description: "Best Prices and Comfortable rides with Brokacars. layout",
   openGraph: {
-    title: "Brokacars srvices",
+    title: "Brokacars services",
     description: "Best Prices and Comfortable rides with Brokacars.",
     url: "https://brokacars.vercel.app/services",
     siteName: "Brokacars",

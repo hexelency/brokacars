@@ -18,7 +18,6 @@ export default async function RootLayout({
   if (!userId) redirect('/sign-in');
   return (
     // <ClerkProvider>
-    
         <>
         <div className="overflow-hidden container mx-auto my-auto">
         <header className="h-[7vh] md:h-[10vh] sm:h-[8vh] flex justify-between items-center px-[5px] md:p-4 gap-4

@@ -18,7 +18,7 @@ const MapSection = () => {
         latitude: 6.5568768,
         zoom: 14
       }}
-      style={{width: "100%", height: 500, borderRadius:10}}
+      style={{width: "100%", height: 1000, borderRadius:10}}
       mapStyle="mapbox://styles/mapbox/streets-v9"
     />
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Metadata } from "next";
+// import { Metadata } from "next";
 // import { UserButton } from "@clerk/nextjs";
 // import Image from "next/image";
 import Booking from "../_components/booking/Booking";
@@ -10,7 +10,7 @@ import MapSection from "../_components/map/MapSection";
 
 // export const generateMetadata = (): Metadata => {
 //   return {
-//     title: "Brokacars s",
+//     title: "Brokacars Dashboard",
 //     description: "Best Prices and Comfortable rides with Brokacars. dashboard",
 //     openGraph: {
 //       title: "Brokacars Dashboard",
@@ -19,7 +19,7 @@ import MapSection from "../_components/map/MapSection";
 //       siteName: "Brokacars",
 //       images: [
 //         {
-//           url: "https://brokacars.vercel.app/og-image.png",
+//           url: "https://brokacars.vercel.app/og-image1.jpg",
 //           width: 1200,
 //           height: 630,
 //           alt: "Brokacars dashboard preview",
@@ -32,7 +32,7 @@ import MapSection from "../_components/map/MapSection";
 //       card: "summary_large_image",
 //       title: "Brokacars Dashboard",
 //       description: "Comfortable rides with Brokacars.",
-//       images: ["https://brokacars.vercel.app/og-image.png"],
+//       images: ["https://brokacars.vercel.app/og-image1.jpg"],
 //     },
 //   }
 // }
@@ -103,14 +103,14 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="  container grid grid-cols-1 lg:h-[90vh] md:h-[90vh]  h-[92.99vh] overflow-hidden overflow-y-visible  mx-auto
-     bg-slate-500/8 ">
-        <div className=" grid sm:grid-rows-[30vh_57.9vh] md:grid-cols-4 grid-rows-[30vh_57.5vh] lg:grid-cols-3">
+      <div className="  container grid grid-cols-1 lg:h-[90vh] md:h-[90vh]  h-[92.99vh] overflow-hidden sm:overflow-y-visible  mx-auto
+     bg-slate-900/5  ">
+        <div className=" grid  md:grid-cols-4 grid-rows-[28.5vh_auto] sm:grid-rows-[29vh_auto] lg:grid-cols-3">
           <div className=" p-[10px] md:p-0 md:col-span-2 md:h-[89vh] h-[60vh] sm:h-[61vh] lg:col-span-1 ">
             <Booking />
           </div>
           {/* map section  */}
-          <div className=" md:col-span-2 lg:col-span-2 bg-blue-900/5 order-first md:order-last  md:h-[89vh]">
+          <div className=" md:col-span-2 lg:col-span-2 bg-slate-900/5   order-first md:order-last lg:min-h-[90vh] md:h-[89vh]">
             <MapSection />
           </div>
         </div>

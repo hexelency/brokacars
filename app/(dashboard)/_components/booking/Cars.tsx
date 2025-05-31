@@ -44,7 +44,7 @@ const Cars = () => {
         Select  Car
       </h2>
       
-      <div className="grid grid-cols-3 gap-1 md:gap-2 md:grid-cols-3 w-full border-0 mb-8 sm:mb-0">
+      <div className="grid grid-cols-3 gap-1 md:gap-2 md:grid-cols-3 w-full border-0 mb-8  sm:mb-0">
       {
         CarsList.map((car, index) =>(
           <div  key={index} className={`flex flex-col border-[1px] text-center items-center justify-center  gap-[0.8rem] sm:gap-[1.4rem] mb-[14px] sm:mb-[0px] rounded-md shadow-3xs shadow-slate-600 cursor-pointer hover:border-blue-950 ${selectedCar == index ? " border-blue-950 border-[0px] shadow-sm" : null} `}
@@ -59,7 +59,7 @@ const Cars = () => {
             height={100}
             width={100}
             alt={"car"+car.name}
-            className=' md:w-[100df]  md:h-full self-center w-[60] h-[45] sm:w-[80] sm:h-[60]'
+            className=' md:w-[60]  md:h-[51] self-center w-[55] h-[30] sm:w-[60] sm:h-[35] '
             />
             <div className='flex justify-around w-full text-slate-950'>
               <h2 className=" text-nowrap text-[11px] text-slate-600">{car.name}</h2>
