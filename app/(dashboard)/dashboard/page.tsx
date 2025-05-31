@@ -103,10 +103,10 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="  container grid grid-cols-1 lg:h-[90vh] md:h-[90vh]  h-[92.99vh] overflow-hidden sm:overflow-y-visible  mx-auto
+      <div className="  container grid grid-cols-1 lg:h-[90vh] md:h-[90vh]  h-[92.99vh] overflow-hidden mx-auto
      bg-slate-900/5  ">
         <div className=" grid  md:grid-cols-4 grid-rows-[28.5vh_auto] sm:grid-rows-[29vh_auto] lg:grid-cols-3">
-          <div className=" p-[10px] md:p-0 md:col-span-2 md:h-[89vh] h-[60vh] sm:h-[61vh] lg:col-span-1 ">
+          <div className=" p-[10px] md:p-0 md:col-span-2 md:h-[89vh] h-[60vh] sm:h-[61vh] lg:col-span-1 overflow-hidden scroll-on-landscape">
             <Booking />
           </div>
           {/* map section  */}
