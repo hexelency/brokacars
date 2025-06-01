@@ -17,7 +17,7 @@ const Booking = () => {
       <div className='h-[59vh] sm:h-[62vh] sm:max-w-[90vw] md:max-w-[50vw] md:h-[84vh] lg:min-h-[81.9vh]  md:grid  grid-rows-[auto_auto_auto]' >
         <AutoCompleteAddress />
         <Cars />
-        <Paymentcard />
+        <Paymentcard /> 
       </div>
     </div>
   )

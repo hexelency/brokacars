@@ -120,6 +120,23 @@
     @apply bg-background text-foreground;
   }
 }
+.pin {
+  position: absolute;
+  height: 100%; /* control the size */
+  aspect-ratio: 2/3;
+  mask: 
+    conic-gradient(from -30deg at bottom,#0000,#000 1deg 59deg,#0000 60deg) bottom/100% 50% no-repeat, 
+    radial-gradient(circle at 50% calc(100% / 3),#0000 21.5%,#000 22% 44%,#0000 44.5%);
+  background: #ec1a23;
+}
+.pin2{
+
+  border-radius: 50%;
+  border-top: 50 solid red;
+  border-left: 50 solid transparent;
+  border-right: 50 solid transparent;
+
+}
 
 @media screen and (orientation: landscape) and (max-width: 1280px) {
   .scroll-onr-landscape {
