@@ -73,7 +73,7 @@ export default function Dashboard() {
     };
     
 
-    const watchId = navigator.geolocation.watchPosition(
+    const watchId = navigator.geolocation.getCurrentPosition(
       (position) => {
         console.log("Real-time position:", position.coords);
         setUserLocation({
@@ -89,7 +89,7 @@ export default function Dashboard() {
     );
 
     // Cleanup function for stopping the watcher when component unmounts
-    return () => navigator.geolocation.clearWatch(watchId);
+    // return () => navigator.geolocation.clearWatch(watchId);
   };
 
   const fetchFallbackLocation = async () => {
