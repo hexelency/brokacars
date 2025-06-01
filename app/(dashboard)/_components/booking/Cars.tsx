@@ -59,7 +59,7 @@ const Cars = () => {
             height={100}
             width={100}
             alt={"car"+car.name}
-            className='object-cover md:w-[60]  md:h-[51] self-center w-[55] h-[30] sm:w-[60] sm:h-[35] '
+            className=' md:w-[60]  md:h-[51] self-center w-[55] h-[30] sm:w-[60] sm:h-[35] '
             />
             <div className='flex justify-around w-full text-slate-950'>
               <h2 className=" text-nowrap text-[11px] text-slate-600">{car.name}</h2>
