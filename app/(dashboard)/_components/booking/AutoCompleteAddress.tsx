@@ -7,6 +7,7 @@ import { AddressInput }  from './AddressInput';
 
 interface Suggestion {
   full_address: string;
+  mapbox_id: string;
 }
 
 
@@ -25,6 +26,7 @@ const AutoCompleteAddress = () => {
   const [manualSourceSelected, setManualSourceSelected] = useState<boolean>(false);
   const [manualDestinationSelected, setManualDestinationSelected] = useState<boolean>(false);
 
+  const [locationLoading, setLocationLoading] = useState<boolean>(false);
   return (
     <div className=" border-[2px] -5 sm:pl-2 border-slate-950/10 rounded-lg mb-8 md:mb-5 sm:mb-2 md:min-w-[vw] 2xl:mb-1">
       <AddressInput
@@ -37,6 +39,8 @@ const AutoCompleteAddress = () => {
         setLoading={setLoadingSource}
         manualSelected={manualSourceSelected}
         setManualSelected={setManualSourceSelected}
+        locationLoading={locationLoading}
+        setLocationLoading={setLocationLoading}
       />
 
       
@@ -51,6 +55,8 @@ const AutoCompleteAddress = () => {
         setLoading={setLoadingDestination}
         manualSelected={manualDestinationSelected}
         setManualSelected={setManualDestinationSelected}
+        locationLoading={locationLoading}
+        setLocationLoading={setLocationLoading}
       />
     </div>
   );

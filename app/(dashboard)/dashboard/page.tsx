@@ -118,7 +118,7 @@ export default function Dashboard() {
           </div>
           {/* map section  */}
           <div className=" md:col-span-2 lg:col-span-2 bg-slate-900/5   order-first md:order-last lg:min-h-[90vh] md:h-[89vh]">
-            {/* <MapSection /> */}
+            <MapSection />
           </div>
         </div>
       </div>

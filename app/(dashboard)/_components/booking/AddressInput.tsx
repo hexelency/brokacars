@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 interface Suggestion {
     full_address: string;
+    mapbox_id:string;
 }
 
 interface AddressInputProps {
@@ -18,6 +19,8 @@ interface AddressInputProps {
     setLoading: (value: boolean) => void;
     manualSelected: boolean;
     setManualSelected: (value: boolean) => void;
+    locationLoading: boolean;
+    setLocationLoading: (value:boolean) => void;
 }
 
 export const AddressInput: React.FC<AddressInputProps> = ({
@@ -30,6 +33,8 @@ export const AddressInput: React.FC<AddressInputProps> = ({
     setLoading,
     manualSelected,
     setManualSelected,
+    locationLoading,
+    setLocationLoading,
 }) => {
     useEffect(() => {
         if (manualSelected) {
@@ -58,14 +63,60 @@ export const AddressInput: React.FC<AddressInputProps> = ({
             const data = await response.json();
             setSuggestions(data?.suggestions || []);
         } catch (err) {
-            console.error("Error fetching suggestions:", err);
+            console.error("Error fetching suggestions:", err); 
         } finally {
             setLoading(false);
         }
     };
 
+    const retrieveSuggestion = async (suggestion: string) => {
+    try {
+      setLocationLoading(true);
+      console.log("retrieveing location");
+      const res = await fetch(`/api/retrieve-address?id=${suggestion}`);
+      const data = await res.json();
+      console.log("retrieved location");
+
+      console.log(data)
+
+
+      if (data?.features?.length ) {
+        const feature = data.features[0];
+        const [lng, lat] = feature.geometry.coordinates;
+
+        console.log("founded exact");
+
+
+        console.log("Retrieved coordinates:", { lat, lng });
+
+        // TODO: Set to state or context if needed
+        // setUserLocation({ lat, lng });
+      }else{
+        console.log("no exact");
+      }
+    } catch (error) {
+      console.error("Error retrieving location:", error);
+    } finally {
+      setLocationLoading(false);
+    }
+  };
+
+    const onInputClick =async(item:Suggestion)  => {
+        setValue(item.full_address);
+        setSuggestions([]);
+        setManualSelected(true);
+        retrieveSuggestion(item.mapbox_id)
+    }
+
     return (
-        <div className="mt-0 sm:mt-4 w-full px-2 pb-1 sm:pb-1 sm:pr-2">
+        <div className="relative mt-0 sm:mt-4 w-full px-2 pb-1 sm:pb-1 sm:pr-2">
+            {locationLoading && value ? (
+                        <div className="absolute h-4 w-4 rounded-[50%] border-2 border-blue-950 border-r-0 animate-spin right-4  top-[31px]"></div>
+                    ) 
+                    
+                    : (
+                        null
+                    ) }
             <label className="text-[12px] text-slate-800">{label}</label>
             <Input
                 type="text"
@@ -77,10 +128,22 @@ export const AddressInput: React.FC<AddressInputProps> = ({
                 }}
             />
             <div className="relative">
-                {loading && value.trim() && <Skeleton className="mt-[2px] md:mt-2 h-[14px] sm:h-4 w-[55%] rounded bg-gray-200" />}
+                {loading && value.trim() && (
+                    <>
+                    <div className="flex justify-between bg-gray-200">
+                        <Skeleton className="mt-[2px] md:mt-2 h-[14px] sm:h-4 w-[30%] rounded bg-gray-300" />
+                        <Skeleton className="mt-[2px] md:mt-2 h-[14px] sm:h-4 w-[20%] rounded bg-gray-300" />
+                        <Skeleton className="mt-[2px] md:mt-2 h-[14px] sm:h-4 w-[25%] rounded bg-gray-300" />
+                        <Skeleton className="mt-[2px] md:mt-2 h-[14px] sm:h-4 w-[10%] rounded bg-gray-300" />
+                    </div>
+                    </>
+                )}
 
                 {!loading && suggestions.length > 0 && (
-                    <div className="mt-0 md:mt-2 text-[12px] sm:text-[18px] bg-transparent border rounded shadow-sm">
+                    <>
+                    <div className="flex justify-between">
+
+                    <div className=" mt-0 md:mt-2 text-[12px] sm:text-[18px] bg-transparent border rounded shadow-sm">
                         {suggestions
                             .filter(item => item.full_address && item.full_address.trim() !== "")
                             .map((item, index) => (
@@ -88,15 +151,20 @@ export const AddressInput: React.FC<AddressInputProps> = ({
                                     key={index}
                                     className="p-2 hover:bg-blue-200 cursor-pointer"
                                     onClick={() => {
-                                        setValue(item.full_address);
-                                        setSuggestions([]);
-                                        setManualSelected(true);
+                                        onInputClick(item)
                                     }}
                                 >
                                     {item.full_address}
                                 </div>
+                                
                             ))}
                     </div>
+
+                    
+
+                    </div>
+                    </>
+
                 )}
             </div>
         </div>
