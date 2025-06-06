@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import Booking from "../_components/booking/Booking";
 import MapSection from "../_components/map/MapSection";
 import { UserLocationCtx } from "../DashboardContext/UserLocationCtx";
+import { SourceCoordinatesContext } from "../DashboardContext/SourceCoordinatesCtx";
+import { DestinationCoordinatesContext } from "../DashboardContext/DestinationCoordinatesCtx";
+import { DirectionDataContext } from "../DashboardContext/DirectionDataCtx";
 
 // SEO optimization 
 // import {  useEffect, useState } from "react";
@@ -44,6 +47,10 @@ import { UserLocationCtx } from "../DashboardContext/UserLocationCtx";
 
 export default function Dashboard() {
   const [userLocation , setUserLocation] = useState<any>() ;
+  const [sourceCoordinates , setSourceCoordinates] = useState<[number, number] | null>(null);
+  const [destinationCoordinates, setDestinationCoordinates] = useState<[number, number] | null>(null);
+  const [directionsContext, setDirectionsContext] = useState<any>(null);
+
   useEffect(
     () => {
       getPreciseUserLocation();
@@ -109,6 +116,11 @@ export default function Dashboard() {
   return (
     <>
     <UserLocationCtx.Provider value={{userLocation, setUserLocation}}>
+      <SourceCoordinatesContext.Provider value={{sourceCoordinates , setSourceCoordinates}} >
+      <DestinationCoordinatesContext.Provider value={{destinationCoordinates, setDestinationCoordinates}} >
+
+        <DirectionDataContext.Provider value={{directionsContext, setDirectionsContext}}>
+
 
       <div className="  container grid grid-cols-1 lg:h-[90vh] md:h-[90vh]  h-[92.99vh] overflow-hidden mx-auto
      bg-slate-900/5  ">
@@ -119,9 +131,14 @@ export default function Dashboard() {
           {/* map section  */}
           <div className=" md:col-span-2 lg:col-span-2 bg-slate-900/5   order-first md:order-last lg:min-h-[90vh] md:h-[89vh]">
             <MapSection />
+            {/* <div className="h-full w-full bg-slate-500 rounded-2xl animate-grow"> </div> */}
           </div>
         </div>
       </div>
+
+        </DirectionDataContext.Provider> 
+       </DestinationCoordinatesContext.Provider>
+      </SourceCoordinatesContext.Provider>
       </UserLocationCtx.Provider>
     </>
   );

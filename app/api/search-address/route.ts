@@ -18,8 +18,8 @@ export async function GET(request: Request) {
     q: searchText,
     language: "en",
     limit: "8",
-    session_token,
-    access_token: MAPBOX_ACCESS_TOKEN,
+    // session_token,
+    // access_token: MAPBOX_ACCESS_TOKEN,
   });
 
   const result = await fetch(`${MAPBOX_BASE_URL}?${params.toString()}`, {
@@ -31,3 +31,4 @@ export async function GET(request: Request) {
   const searchResult = await result.json();
   return NextResponse.json(searchResult);
 }
+ 

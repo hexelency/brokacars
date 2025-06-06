@@ -9,6 +9,10 @@ interface Suggestion {
     mapbox_id:string;
 }
 
+// interface LocationCoordinates{
+//     coordinates: [number , number]
+// }
+
 interface AddressInputProps {
     label: string;
     value: string;
@@ -21,6 +25,8 @@ interface AddressInputProps {
     setManualSelected: (value: boolean) => void;
     locationLoading: boolean;
     setLocationLoading: (value:boolean) => void;
+    locationCoordinates: [number, number] | null;
+    setLocationCoordinates: (value: [number, number] | null) => void;
 }
 
 export const AddressInput: React.FC<AddressInputProps> = ({
@@ -35,6 +41,8 @@ export const AddressInput: React.FC<AddressInputProps> = ({
     setManualSelected,
     locationLoading,
     setLocationLoading,
+    locationCoordinates,
+    setLocationCoordinates,
 }) => {
     useEffect(() => {
         if (manualSelected) {
@@ -77,17 +85,20 @@ export const AddressInput: React.FC<AddressInputProps> = ({
       const data = await res.json();
       console.log("retrieved location");
 
-      console.log(data)
+    //   console.log(data)
 
 
       if (data?.features?.length ) {
         const feature = data.features[0];
         const [lng, lat] = feature.geometry.coordinates;
+        setLocationCoordinates([
+            feature.geometry.coordinates[0],
+            feature.geometry.coordinates[1]
+        ])
+        
 
-        console.log("founded exact");
 
-
-        console.log("Retrieved coordinates:", { lat, lng });
+        // console.log("Retrieved coordinates:", locationCoordinates);
 
         // TODO: Set to state or context if needed
         // setUserLocation({ lat, lng });
@@ -117,8 +128,46 @@ export const AddressInput: React.FC<AddressInputProps> = ({
                     : (
                         null
                     ) }
-            <label className="text-[12px] text-slate-800">{label}</label>
-            <Input
+            <label className="text-[11px] sm:text-[12px] text-slate-800">{label}</label>
+            <div className="flex justify-between ">
+                
+                {label == "Where From?" ? (
+                    <>
+                    <div className="relative ">
+                     <svg
+                                viewBox="0 0 24 24"
+                                fill="#120b0b"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-[20px] h-[25px]"
+                            >
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                            </svg>
+                        
+                         <div className="w-[10px] h-[10px] bg-gray-200 border-2 border-slate-900 rounded-full absolute top-[5px] left-[50%] -translate-x-1/2" />
+                    </div>
+                    </>
+                )
+                :(
+                    <>
+                    <div className="relative  ">
+                     <svg
+                                viewBox="0 0 24 24"
+                                fill="#120b0b"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-[20px] h-[25px]"
+                            >
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                            </svg>
+                            <div className="w-[10px] h-[10px] bg-gray-400 border-2 border-slate-900 rounded-[2px] absolute top-[5px] left-[50%] -translate-x-1/2" />
+
+                            
+                           
+
+                        </div>
+
+                    </>
+                )}
+                <Input
                 type="text"
                 className="mt-0 md:mt-1 text-[11px] border-1 border-slate-900/90"
                 value={value}
@@ -127,6 +176,8 @@ export const AddressInput: React.FC<AddressInputProps> = ({
                     setValue(e.target.value);
                 }}
             />
+            </div>
+            
             <div className="relative">
                 {loading && value.trim() && (
                     <>
